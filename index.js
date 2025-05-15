@@ -1,13 +1,15 @@
-//fix background gradient not moving along with page
+//fix background gradient not moving along with the page
 window.addEventListener('scroll', () => {
     let y = 0 + (window.scrollY || window.pageYOffset); 
     document.body.style.setProperty("background-position", "0px " + y + "px");
-    console.log(y)
 });
 
 document.getElementById("rotateLeft").addEventListener("click", () => {
     let images = document.body.getElementsByTagName("img");
     for (let image of images) {
+        // fixing my own image being flipped and rotated takes a lot of cheeky shenanigans searching through the transform css text
+        // so let's just not rotate my picture instead; this also avoids the overflow when my image is horizontal instead of vertical
+        if (image.id === "me") { continue; }
         if (!image.style.cssText) { image.style.setProperty("transform", "rotate(330deg)"); }
         else {
             let curCSS = image.style.cssText;
@@ -23,6 +25,7 @@ document.getElementById("rotateLeft").addEventListener("click", () => {
 document.getElementById("rotateRight").addEventListener("click", () => {
     let images = document.body.getElementsByTagName("img");
     for (let image of images) {
+        if (image.id === "me") { continue; }
         if (!image.style.cssText) { image.style.setProperty("transform", "rotate(30deg)"); }
         else {
             let curCSS = image.style.cssText;
@@ -35,13 +38,17 @@ document.getElementById("rotateRight").addEventListener("click", () => {
     return false;
 });
 
-document.getElementById("me").addEventListener("click", function flipIt() {
-    if (!this.style.cssText) { this.style.setProperty("transform", "scale(-1, 1)"); }
+function flipMe() {
+    let me = document.getElementById("me");
+    if (!me.style.cssText) { me.style.setProperty("transform", "scale(-1, 1)"); }
     else {
-        if (this.style.cssText.indexOf("-") === -1) {
-            this.style.setProperty("transform", "scale(-1, 1)");            
+        if (me.style.cssText.indexOf("-") === -1) {
+            me.style.setProperty("transform", "scale(-1, 1)");            
         } else {
-            this.style.setProperty("transform", "scale(1, 1)");
+            me.style.setProperty("transform", "scale(1, 1)");
         }
     }
-});
+}
+
+document.getElementById("me").addEventListener("click", flipMe);
+document.getElementById("flipMeLink").addEventListener("click", flipMe);

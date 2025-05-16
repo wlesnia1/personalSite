@@ -111,6 +111,7 @@ img {
 
 #misc a {
     margin-left: 2rem;
+    white-space: nowrap;
 }
 
 footer {

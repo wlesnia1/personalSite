@@ -22,6 +22,12 @@ header {
     width: 98%;
 }
 
+@media only screen and (max-width: 900px) {
+    header h1 {
+        padding-left: 0.3rem;
+    }   
+}
+
 img {
     max-width: 100%;
     max-height: 20rem;

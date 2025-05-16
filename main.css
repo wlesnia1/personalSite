@@ -41,7 +41,7 @@ img {
 }
 
 .navigationItem a {
-    text-decoration: none;
+    text-decoration: underline;
     color: black;
 }
 
@@ -52,6 +52,28 @@ img {
 
 .aboutMeBlock h2{
     margin-top: 0rem;
+}
+
+.aboutMeBlock p {
+    padding: 0 0.5rem;
+}
+
+@media screen and (max-width: 600px) {
+    #me {
+        max-height: 14rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #me {
+        max-height: 12rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #me {
+        max-height: 10rem;
+    }
 }
 
 #projects ul {

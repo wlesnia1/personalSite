@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Movie API testing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="movies.css" rel="stylesheet" />
+    <script src="movies.js" defer ></script>
+</head>
+<body>
+    <header>
+        <div class="logoBlock">
+            <h1><a href="index.html"><img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home Icon" style="max-height: 3rem; margin-right: 1rem"/></a></h1>
+        </div>
+        <h1>Movies are Fun!</h1>
+        <div><!--intentionally left blank for flex reasons--></div>
+    </header>
+    <main>
+        <section id="inputz">
+            <form id="genreForm" action="#">
+                <div>
+                    <label for="genres">Choose a genre:</label>
+                    <select name="genres" id="genres"></select>
+                </div>
+                <br />
+                <button id="playButton" type="button">Load a random movie</button>
+                <br />
+            </form>
+            <div id="moviePoster"></div>
+            <div id="movieText">
+                <div id="movieTitle"></div>
+                <div id="movieOverview"></div>
+            </div>
+            <br />
+            <div id="feedback">
+                <button id="likeButton" type="button">Like</button>
+                <button id="dislikeButton" type="button">Dislike</button>
+            </div>
+        </section>
+        <section id="outputz">
+            <div>
+                <h3>Liked</h3>
+                <ul id="likedList"></ul>
+            </div>
+            <div>
+                <h3>Disliked</h3>
+                <ul id="dislikedList"></ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Thanks to themoviedb.org for providing free API keys</p>
+    </footer>
+</body>
+</html>

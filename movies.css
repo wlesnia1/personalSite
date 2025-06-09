@@ -9,6 +9,7 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: sans-serif;
+    background-color: lightblue;
 }
 
 header {
@@ -54,6 +55,11 @@ main {
 
 #outputz div {
     width: 45%;
+}
+
+#outputz li {
+    font-size: 18px;
+    padding-top: 0.5rem;
 }
 
 h3 {

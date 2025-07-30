@@ -53,7 +53,8 @@ img {
 
 #aboutMe {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 .aboutMeBlock h2{
